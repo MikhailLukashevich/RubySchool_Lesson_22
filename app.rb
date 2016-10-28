@@ -14,3 +14,17 @@ end
 get '/enrol' do
   erb :enrol
 end
+
+get '/contacts' do
+  erb :contacts
+end
+
+post '/enrol' do
+	@user_name = params[:user_name]
+	@phone = params[:phone]
+	@data_time = params[:data_time]
+	f = File.open './public/users.txt', 'a'
+	f.write "Name: #{@user_name}, phone: #{@phone}, data and time: #{@data_time}"
+	f.close
+	erb :enrol
+end
