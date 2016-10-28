@@ -10,3 +10,7 @@ end
 get '/about' do
   erb :about
 end
+
+get '/enrol' do
+  erb :enrol
+end
